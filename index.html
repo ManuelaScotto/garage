@@ -15,30 +15,31 @@
 <body>
     <div class="container">
         <div class="formBx">
-            <form>
+            <form id="form">
                 <h2>GARAGE</h2>
                 <div class="inputBox">
-                    <input type="text" name="" required>
+                    <input id="marca" type="text" name="" required>
                     <span>Marca</span>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="" required>
+                    <input id="modello" type="text" name="" required>
                     <span>Modello</span>
                 </div>
                 <div class="inputBox">
-                    <select name="" id="">
+                    <select name="" id="colore">
                         <option value="">Colore</option>
-                        <option value="#817d7d">Grigia metalizzata</option>
+                        <option value="#b1b1b1">Grigia metalizzata</option>
                         <option value="#f82020">Rossa</option>
                         <option value="#000000">Nera</option>
                         <option value="#ffffff">Bianca</option>
                         <option value="#24056e">Blu</option>
-                        <option value="#00ca0a">Verde</option>
+                        <option value="#154b15">Verde</option>
                     </select>
                     <!-- <span>Colore</span> -->
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="aggiungi macchina" name="">
+                    <input type="submit" value="Aggiungi Macchina"
+                        onclick="window.location.href='#carList'">
                 </div>
             </form>
         </div>
@@ -46,7 +47,7 @@
             <img src="./png/car2.png" alt="car">
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="carList">
         <div class="formBx small">
             <div class="form">
                 <h2>GARAGE</h2>
@@ -68,20 +69,7 @@
                 </ul>
             </div>
             <div class="list">
-                <ul>
-                    <li>Opel</li>
-                    <li>Corsa</li>
-                    <li class="color"></li>
-                    <li><i class="far fa-times-circle close"></i></li>
-                </ul>
 
-
-                <ul>
-                    <li>Opel</li>
-                    <li>Corsa</li>
-                    <li class="color"></li>
-                    <li><i class="far fa-times-circle close"></i></li>
-                </ul>
             </div>
         </div>
     </div>
