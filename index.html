@@ -13,20 +13,30 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- pagina iniziale -->
+    <div class="container spaceB">
+        <!-- div conferma registrazione -->
+        <div id="confirm">
+            <p>Registrazione avvenuta con successo!</p>
+            <a href="#carList">Clicca qui</a>
+            <p class="inline"> per visualizzare l'elenco</p>
+            <i class="far fa-times-circle x"></i>
+        </div>
         <div class="formBx">
+
+            <!-- form -->
             <form id="form">
                 <h2>GARAGE</h2>
                 <div class="inputBox">
-                    <input id="marca" type="text" name="" required>
+                    <input id="brand" type="text" name="" required>
                     <span>Marca</span>
                 </div>
                 <div class="inputBox">
-                    <input id="modello" type="text" name="" required>
+                    <input id="model" type="text" name="" required>
                     <span>Modello</span>
                 </div>
                 <div class="inputBox">
-                    <select name="" id="colore">
+                    <select name="" id="color">
                         <option value="">Colore</option>
                         <option value="#b1b1b1">Grigia metalizzata</option>
                         <option value="#f82020">Rossa</option>
@@ -35,32 +45,33 @@
                         <option value="#24056e">Blu</option>
                         <option value="#154b15">Verde</option>
                     </select>
-                    <!-- <span>Colore</span> -->
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="Aggiungi Macchina"
-                        onclick="window.location.href='#carList'">
+                    <input type="submit" value="Aggiungi Macchina">
                 </div>
             </form>
         </div>
-        <div class="imgBx img">
+        <div class="box img">
             <img src="./png/car2.png" alt="car">
         </div>
     </div>
-    <div class="container" id="carList">
+
+    <!-- seconda pagina -->
+    <div class="container flex-col" id="carList">
         <div class="formBx small">
+            <!-- cerca e pulisci garage -->
             <div class="form">
                 <h2>GARAGE</h2>
                 <div class="inputBox">
-                    <input type="text" name="">
+                    <input id="search" type="text" name="">
                     <span>Cerca Macchina</span>
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="pulisci" name="">
+                    <input id="clean" type="submit" value="pulisci" name="">
                 </div>
             </div>
         </div>
-        <div class="imgBx big">
+        <div class="box table">
             <div class="heading">
                 <ul>
                     <li>Marca</li>
@@ -68,11 +79,12 @@
                     <li>Colore</li>
                 </ul>
             </div>
-            <div class="list">
-
-            </div>
+            <!-- tabella in cui inserire le macchine -->
+            <div class="list"></div>
         </div>
     </div>
+
+    <!-- script -->
     <script src="script.js"></script>
 </body>
 
