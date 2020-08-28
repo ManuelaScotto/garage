@@ -347,6 +347,9 @@ li {
     .box.table .heading {
         font-size: 20px;
     }
+    .list {
+        height: 40%;
+    }  
     .list ul, .heading ul {
         grid-template-columns: 3fr 3fr 1fr;
     }
