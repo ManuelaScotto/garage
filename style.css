@@ -1,3 +1,4 @@
+/* SETTING */
 * {
     margin:0;
     padding:0;
@@ -16,43 +17,95 @@ body {
 
 .container {
     position: relative;
+    display: flex;
+    align-self: center;
     width: 100%;
     max-width: 1100px;
-    margin: 20px;
     height: 600px;
+    margin: 20px;
     background: #122647;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
 }
+
+.spaceB {
+    justify-content: space-between;
+
+}
+i {
+    cursor: pointer;
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* DIV CONFERMA REGISTRAZIONE  */
+
+#confirm {
+    display: none;
+}
+
+#confirm.active{
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    display: inline-block;
+    width:45%;
+    padding: 20px;
+    font-size:16px;
+    line-height: 1.5;
+    -webkit-box-shadow: 0px 0px 20px -7px rgba(27,250,173,.8);
+    -moz-box-shadow: 0px 0px 20px -7px rgba(27,250,173,.8);
+    box-shadow: 0px 0px 20px -7px rgba(27,250,173,.8);
+}
+
+#confirm p, #confirm a{
+    color: rgba(27, 250, 173,0.8);
+}
+
+#confirm .inline {
+    display: inline-block;
+    padding-left: 8px;
+}
+
+#confirm i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;  
+    color: #1bfaad;
+    z-index: 10;
+}
+
+/* CONTAINER FORM */
+
 .container .formBx {
-    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
 }
 
 .formBx.small {
     width: 25%;
 }
+
+/* FORM */
 .container .formBx form, .form {
     position: relative;
     width: 100%;
     padding: 0 0 0 75px;
 }
 
-h2 {
-    color: #fff;
-    font-weight: 500;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-}
-
 .form h2 {
     margin-bottom: 100px;
 }
+
+/* CONTAINER INPUT */
 .inputBox {
      position: relative;
      margin-bottom: 40px;
@@ -62,18 +115,26 @@ h2 {
     margin-bottom: 0px;
 }
 
+/* INPUT SELECT SUBMIT*/
 input, select {
     position: relative;
-    background: transparent;
-    outline: none;
-    border: none;
     width: 100%;
-    color: #fff;
     padding-bottom: 10px;
     font-size:16px;
-    letter-spacing: 1px;
     font-weight: 300;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
     border-bottom: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+    background: transparent;
+}
+
+.inputBox input:focus, .inputBox input:valid,
+select:focus {
+    border-bottom-color: #fff;
+    padding: 10px 10px 10px 20px;
+    font-weight: 500;
 }
 
 select {
@@ -84,81 +145,59 @@ select:active, select:focus{
     color: #fff;
 }
 
-.container .formBx form .inputBox input[type="submit"] {
-    background: peachpuff;
-    padding: 8px 20px;
+.inputBox input[type="submit"] {
     margin-top: -10px;
-    /* width: 100px; */
-    cursor: pointer;
-    color: rgb(201, 42, 21);
+    padding: 8px 20px;
     font-size: 18px;
-    font-weight: 400 ;
-    border: none;
+    font-weight: 500 ;
     text-transform: uppercase;
     letter-spacing: 4px;
+    border: none;
+    color: rgb(201, 42, 21);
+    background: peachpuff;
+    cursor: pointer;
 }
-  
-.container .formBx form .inputBox input[type="submit"]:focus {
+  .inputBox input[type="submit"]:hover {
+      font-weight: 700;
+  }
+.inputBox input[type="submit"]:active {
     background: #1bfaad ;
     color: #111;
 }
 
 .container .formBx .form .inputBox input[type="submit"] {
-    background: peachpuff;
-    padding: 8px 20px;
-    margin-top: -10px;
     width: 100%;
-    cursor: pointer;
-    color: rgb(201, 42, 21);
-    font-size: 18px;
-    font-weight: 400 ;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 4px;
 }
-  
-.container .formBx .form .inputBox input[type="submit"]:focus {
-    background: #1bfaad ;
-    color: #111;
-}
+
+/* SPAN */
+
 span {
     position: absolute;
     left: 0;
+    display: inline-block;
     font-size: 16px;
     font-weight: 300;
-    display: inline-block;
-    pointer-events: none;
     letter-spacing: 1px;
     color: rgba(255,255,255,0.5);
+    pointer-events: none;
     transition: all 0.2s;
 }
 
- input:focus ~ span,
- input:valid ~ span {
+input:focus ~ span , #form input:valid ~ span {
+    font-size: 14px;
     transform: translateY(-24px);
     color:  #1bfaad;
-    font-size: 14px;
 }
 
-.inputBox input:focus ,
-.inputBox input:valid,
-select:focus {
-    border-bottom-color: #fff;
-}
+/* CONTAINER IMG || TABLE */
 
-.imgBx {
+.box {
     position: relative;
     width: 50%;
-    height: 100%;
     overflow: hidden;
 }
 
-.imgBx.big {
-    padding: 60px 40px 60px 180px;
-    width: 75%;
-    max-height: 520px;
-    overflow-y: hidden;
-}
+/* IMG */
 .img:before {
     content: '';
     position: absolute;
@@ -168,21 +207,29 @@ select:focus {
     height: 100%;
     background: rgba(255, 218, 185, .4);
     transform-origin: bottom;
-    transform: skewX(-25deg) translateX(10%);
-    
+    transform: skewX(-25deg) translateX(10%);    
 }
 
-.imgBx img {
+.box img {
     position: absolute;
     bottom: 0;
     width: 118%;
     max-height: 95%;
 }
 
-.heading {
-    border-bottom: 3px solid peachpuff;
-    font-size: 24px;
+/* TABLE */
+.box.table {
+    width: 75%;
+    max-height: 550px;
+    padding: 60px 40px 60px 180px;
+    overflow-y: hidden;
 }
+
+.heading {
+    font-size: 24px;
+    border-bottom: 3px solid peachpuff;
+}
+
 .heading ul, .list ul {
     display: grid;
     grid-template-columns: repeat(2, 3fr) 2fr 1fr;
@@ -190,43 +237,117 @@ select:focus {
     color: #fff;
 }
 
-.color {
-    margin-top:8px;
-    margin-bottom: 8px;
-    background-color: pink;
+
+/* LIST TABELLA FANTASMA */
+.list {
+    height: 90%;
+    margin-top: 40px;
+    font-size: 21px;
+    text-transform: capitalize;
+    overflow-y: auto;
 }
+
+li {
+    position: relative;
+    padding: 10px;
+}
+
 .list ul li:last-child {
     text-align: center;
-    /* font-size: 20px; */
+    
 }
 .list ul:nth-child(odd) {
     background-color: rgba(255, 218, 185, 0.5);
     color: rgb(0, 0, 0);
 }
-.list {
-    margin-top: 40px;
-    font-size: 18px;
-    line-height: 2.5;
-    height: 100%;
-    overflow-y: auto;
+
+.color {
+    margin-top:8px;
+    margin-bottom: 8px;
 }
-li {
-    position: relative;
-}
-.list span  {
-    float: right;
-}
+
+
+/* MEDIA QUERY */
 @media (max-width: 991px) {
-    .container .formBx {
-        width: 100%;
-        padding: 0 50px;
+    #confirm.active {
+    top: 4%;
+    left: 11%;
+    width: 78%;
+    font-size: 14px;
     }
     .container .formBx form, .form {
         width: 100%;
         max-width: 500px;
         padding: 0;
     }
-    .container .imgBx {
+    .container .formBx, .flex-col {
+        width: 100%;
+        padding: 0 50px;
+    }
+    .container .img {
         display: none;
+    }
+    .flex-col {
+        flex-direction: column;  
+        align-items: center;
+    }
+    .container .formBx.small {
+        padding: 0;
+    }
+    .flex-col h2 {
+        margin: 40px 0;
+    }
+    .formBx .form .inputBox input[type="submit"] {
+        width: 160px;
+    }
+    .box.table {
+        width: 100%;
+        max-height: 287px;
+        padding: 0px;
+    }
+    .list {
+        height: 68%;
+        font-size: 16px;
+    }   
+}
+
+
+@media (max-width: 400px) {
+    .container {
+        height: 400px;
+    }
+    .spaceB {
+        margin-top: 40px;
+    }
+    #confirm.active {
+    top: -39px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    }
+    #confirm i {   
+        top: 15px;
+        right: 28px;
+    }
+    .container .formBx {
+        align-items: flex-start;
+        margin-top:20px;
+        padding: 0 20px;
+    }
+    .flex-col {
+    padding: 0 20px;
+    }
+    .inputBox input[type="submit"] {
+          font-size: 14px;
+      }
+    .form h2, .list ul .color, .heading ul li:last-child {
+        display: none;
+    }
+    .box.table .heading {
+        font-size: 20px;
+    }
+    .list ul, .heading ul {
+        grid-template-columns: 3fr 3fr 1fr;
     }
 }
